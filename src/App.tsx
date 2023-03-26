@@ -1,36 +1,35 @@
-import './App.css'
+import { Route, Routes } from 'react-router-dom';
 
-import dttLogo from './assets/dtt_logo_transparent.png'
-import reactLogo from './assets/react.svg'
-import { useState } from 'react'
+import { Container } from '@mui/material';
+import CustomerDetail from './components/customerDetail/CustomerDetail';
+import Destination from './components/destination/Destination';
+import GeneralInfo from './components/generalTripInfo/GeneralInfo';
+import Login from './components/login/Login';
+import NavbarWrapper from './components/navBar/NavBarWrapper';
+import SignUp from './components/signup/Signup';
+import Stack from '@mui/material/Stack';
+import TripDetail from './components/tripDetail/TripDetail';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://www.dreamteamtravels.com.au/" target="_blank">
-          <img src={dttLogo} className="logo" alt="Dream Team Travels logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>{`Vite + React ${import.meta.env.VITE_PORT}`}</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <>
+      <Container maxWidth="xl">
+        <Stack direction="column" spacing={5}>
+          <div style={{ marginBottom: '50px' }}>
+            <NavbarWrapper />
+          </div>
+          <div>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/destination" element={<Destination />} />
+              <Route path="/:destination/general-trip-details" element={<GeneralInfo />} />
+            </Routes>
+          </div>
+        </Stack>
+      </Container>
+    </>
+  );
 }
 
-export default App
+export default App;
