@@ -72,9 +72,6 @@ const TripDetail = ({ handleChange }: TripDetailProps) => {
 
   return (
     <Container maxWidth="md">
-      <Typography variant="h4" component="h1" align="center" gutterBottom>
-        Travel dates to {destination}
-      </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
           label="Number of days"

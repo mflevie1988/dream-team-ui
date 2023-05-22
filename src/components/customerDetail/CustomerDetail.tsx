@@ -44,9 +44,6 @@ const CustomerDetail = ({ handleChange }: CustomerDetailsProp) => {
 
   return (
     <Container maxWidth="md">
-      <Typography variant="h4" component="h1" align="center" gutterBottom>
-        Customer details
-      </Typography>
       <form onSubmit={handleSubmit}>
         <TextField
           label="Name"

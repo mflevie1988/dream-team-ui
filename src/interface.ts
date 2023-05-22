@@ -1,5 +1,6 @@
 import { AnyAction } from '@reduxjs/toolkit';
 import { CustomerDetails } from './reducers/customerDetails';
+import { DestinationState } from './reducers/destinations';
 import { Reducer } from 'react';
 import { RouterState } from 'connected-react-router';
 import { TransportDetail } from './components/transportDetail/TransportDetail';
@@ -8,6 +9,7 @@ import { TripDetails } from './components/tripDetail/TripDetail';
 export interface AppState {
   router: Reducer<RouterState<any>, AnyAction>;
   login: Login;
+  destination: DestinationState;
   customerDetails: CustomerDetails;
   tripDetails: TripDetails;
   transportDetails: TransportDetail[];

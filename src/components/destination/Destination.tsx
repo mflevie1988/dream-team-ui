@@ -1,13 +1,17 @@
 import { Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 
 import baliImage from '../../assets/bali.png';
+import { fetchDestinationDetails } from '../../reducers/destinations';
 import thailandImage from '../../assets/thailand.png';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const Destination = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleCardClick = (destinationName: string) => {
+    dispatch(fetchDestinationDetails(destinationName));
     navigate(`/${destinationName}/general-trip-details`);
   };
 
