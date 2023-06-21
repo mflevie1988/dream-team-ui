@@ -10,8 +10,6 @@ import SignUp from './components/signup/Signup';
 import Stack from '@mui/material/Stack';
 import TripDetail from './components/tripDetail/TripDetail';
 
-//Test
-
 function App() {
   return (
     <>
